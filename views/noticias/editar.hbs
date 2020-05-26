@@ -1,0 +1,43 @@
+<br><br>
+<div class="container">
+    <div class="jumbotron text-white bg-dark mb-3">
+        <h1 class="display-4">¿Que desea hacer?</h1><br>
+        <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <form action="/noticia/{{_id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <!-- manera de cambiar el metodo http POST por PUT -->
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Titulo</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Ingrese el titulo de la noticia" value="{{titulo}}" name="titulo">
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Contenido</label>
+                        <textarea class="form-control" placeholder="Ingrese la descripcion de la noticia"
+                            id="exampleFormControlTextarea1" name="contenido" rows="3">{{contenido}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Fuente</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Ingrese el titulo de la noticia" value="{{fuente}}" name="fuente">
+
+                    </div><br>
+
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-block btn-dark" type="submit">Editar</button>
+                    </div>
+                </form>
+                <form action="/noticia/{{_id}}?_method=DELETE" method="POST">
+                <!-- manera de cambiar el metodo http POST por PUT -->
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-block btn-lg btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><br>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    {{> navegacion }}
+    <!-- quiere decir que vamos a incluir en todos los layouts (vistas) el partial "navegacion" -->
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        {{> errores }}
+    </div>
+    {{{ body }}}
+    <!-- quiere decir que el cuerpo se reemplazara por TODOS los laypouts exepto partials -->
+
+    <script src="/js/jquery-3.3.1.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
