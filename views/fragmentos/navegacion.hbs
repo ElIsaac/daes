@@ -7,16 +7,42 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       
-      {{#if user}}
+
       <a class="nav-item nav-link" href="/inicio">Inicio</a>
+      <a class="nav-item nav-link" data-toggle="modal" data-target="#exampleModal">App thunkable</a>
+      <a class="nav-item nav-link" href="/acerca-de">Acerca de</a>
+      {{#if user}}
+      
       <a class="nav-item nav-link" href="/agregar">Agregar</a>
       <a class="nav-item nav-link" href="/cerrar-sesion">Cerrar sesion</a>
+      
       {{else}}
-      <a class="nav-item nav-link" href="/inicio">Inicio</a>
       <a class="nav-item nav-link" href="/registrate">Registrate</a>
       <a class="nav-item nav-link" href="/inicia-sesion">Inicia sesion</a>
       
       {{/if}}
+      <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">App thunkable</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Desea salir de la pagina y entrar a la app thunkable
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <a type="button" class="btn btn-primary" href="https://x.thunkable.com/web-build/index.html?projectId=5ece29ecdd3a294dd5b538a4&noframe=1&responsive=1">Aceptar</a>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
     
   </div>

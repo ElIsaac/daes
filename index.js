@@ -45,7 +45,7 @@ app.use(methodOverride('_method')); //uso de los distintos metodos http
 //rutas
 app.use(require('./rutas/noticias'));
 app.use(require('./rutas/usuarios'));
-
+app.use(require('./rutas/extras'));
 //static
 app.use(express.static(path.join(__dirname, 'public')));
 
