@@ -12,6 +12,7 @@ router.get('/inicia-sesion', (req, res) => {
 router.post('/inicia-sesion', passport.authenticate('local',{
     successRedirect: '/', //si el inicio de sesion es correcto se redirigira a la ruta inicial '/'
     failureRedirect: '/inicia-Sesion', //si falla se redirigira hacia '/inicioDeSesion'
+    badRequestMessage: 'No lleno los campos',
     failureFlash: true //'marca en verdadero el uso de mensajes flash'
 }));
 
@@ -57,6 +58,7 @@ router.post('/registrate', async (req, res) => {
 //metodo get del cierre de sesion
 router.get('/cerrar-sesion', (req, res)=>{
     req.logOut();
+    req.flash('succes_msg', 'Sesion cerrada correctamente');
     res.redirect('/');
 })
 
