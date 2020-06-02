@@ -24,10 +24,10 @@ router.get('/registrate', (req, res) => {
 
 //metodo post para crear usuarios
 router.post('/registrate', async (req, res) => {
-    const { email, nombre, apellidos, contrasenia, confirmaContrasenia } = req.body;
+    const { email, nombre, apellidos, contrasenia, confirmaContrasenia } = req.body; //
     const errores = []; //arreglo de posibles errores
     if (req.body.nombre === '' || req.body.email === '' || req.body.contrasenia === '' || req.body.confirmaContrasenia === '') {
-        errores.push({ text: 'llene los campos' })
+        errores.push({ text: 'llene los campos' })//se agrega un  elemento
     }
     if (req.body.contrasenia != req.body.confirmaContrasenia) {
         errores.push({ text: 'Las contraseñas no son iguales' })
@@ -51,15 +51,16 @@ router.post('/registrate', async (req, res) => {
         nuevoUsuario.contrasenia = await nuevoUsuario.encriptacion(contrasenia);
         //guardado de datos en mongodb
         await nuevoUsuario.save();
-        res.redirect('/inicio');
+        req.flash('succes_msg', 'Usuario Creado');
+        res.redirect('/inicia-sesion');
     }
 });
 
 //metodo get del cierre de sesion
 router.get('/cerrar-sesion', (req, res)=>{
     req.logOut();
-    req.flash('succes_msg', 'Sesion cerrada correctamente');
     res.redirect('/');
+    
 })
 
 module.exports = router;
